@@ -22,11 +22,6 @@ public class MainActivity extends AppCompatActivity {
     String ipAddr = "192.168.0.106";
     int port = 1111;
 
-    int[] joystickBackgroundLocation = new int[2];
-    int joystickBackgroundCenterX;
-    int joystickBackgroundCenterY;
-    int joystickCenterX;
-    int joystickCenterY;
 
     Joystick joystickObj;
     UdpClientHandler udp1 = new UdpClientHandler(ipAddr, port);
@@ -49,7 +44,6 @@ public class MainActivity extends AppCompatActivity {
         joystickObj.setOnMoveListener(new Joystick.OnMoveListener() {
             @Override
             public void onMove(float angle, float radius) {
-                //String radi = String.format("%.3f", radius);
                 String msg = String.format("%.3f", radius) + "," + String.format("%.3f", angle);;
                 udp1.setMessage(msg);
                 Log.d("Tag", "Radius: " + radius + "    Angle: " + angle);

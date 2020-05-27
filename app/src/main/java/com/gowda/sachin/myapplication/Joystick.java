@@ -26,7 +26,6 @@ public class Joystick {
 
 
     private float getRadius(float x, float y){
-        float radius;
         return (float)Math.sqrt(Math.pow((this.joystickBackgroundCenterX - (x+this.joystickImgWidth/2)),2)
                 + Math.pow((this.joystickBackgroundCenterY - (y+this.joystickImgHeight/2)),2));
     }
